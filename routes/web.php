@@ -20,7 +20,7 @@
  */
 Route::group(['namespace'=>'admin','middleware'=>['web'],'prefix'=>'admin'],function (){
     Route::get('/','AuthController@login');
-    Route::post('login/post','AuthController@sotre');
+    Route::post('login/post','AuthController@store');
 });
 /**
  * 不验证权限的通用路由
@@ -28,4 +28,11 @@ Route::group(['namespace'=>'admin','middleware'=>['web'],'prefix'=>'admin'],func
 Route::group(['namespace'=>'admin','middleware'=>['web'],'prefix'=> 'admin'],function () {
     Route::get('index', 'IndexController@index');                        //首页
     Route::get('test', 'IndexController@test');                          //测试
+});
+
+/**
+ *
+ */
+Route::group(['namespace'=>'admin','middleware'=>['web'],'prefix'=> 'admin'],function () {
+    Route::get('user/list', 'UserController@index');                        //首页
 });

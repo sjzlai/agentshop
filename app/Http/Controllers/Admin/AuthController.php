@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -32,12 +34,13 @@ class AuthController extends Controller
                 ['username',$user['username']],
                 ['password',md5($user['password'])]
             ])->first();
+        //dd($userInfo);
         if (!$userInfo){
             return back()->with('账号或密码错误');
         }else{
-            Session::put('user.id',$userInfo->id);
-            Session::put('user.name', $userInfo->name);
-            Session::put('user.user_name', $userInfo->user_name);
+            Session::put('user.id',$userInfo->admin_id);
+            Session::put('user.name', $userInfo->realname);
+            Session::put('user.user_name', $userInfo->username);
             return Redirect::to('admin/index');
         }
 

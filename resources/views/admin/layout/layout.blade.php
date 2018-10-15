@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,17 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <link rel="icon" type="image/png" href="assets/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="{{asset('assets/i/favicon.png')}}">
+    <link rel="apple-touch-icon-precomposed" href="{{asset('assets/i/app-icon72x72@2x.png')}}">
     <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
     <link rel="stylesheet" href="{{asset('assets/css/amazeui.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/css/admin.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
     <script src="{{asset('assets/js/echarts.min.js')}}"></script>
 </head>
-
 <body data-type="index">
-
 
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
@@ -75,7 +72,7 @@
                     <li>
                         <a href="#" class="tpl-dropdown-content-message">
                                 <span class="tpl-dropdown-content-photo">
-                      <img src="{{asset('assets/img/user02.png')}}" alt=""> </span>
+                      <img src="{{asset('back/img/user02.png')}}" alt=""> </span>
                             <span class="tpl-dropdown-content-subject">
                       <span class="tpl-dropdown-content-from"> 禁言小张 </span>
                                 <span class="tpl-dropdown-content-time">10分钟前 </span>
@@ -84,7 +81,7 @@
                         </a>
                         <a href="#" class="tpl-dropdown-content-message">
                                 <span class="tpl-dropdown-content-photo">
-                      <img src="{{asset('assets/img/user03.png')}}" alt=""> </span>
+                      <img src="{{asset('back/img/user03.png')}}" alt=""> </span>
                             <span class="tpl-dropdown-content-subject">
                       <span class="tpl-dropdown-content-from"> Steam </span>
                                 <span class="tpl-dropdown-content-time">18分钟前</span>
@@ -153,7 +150,7 @@
                 <ul class="am-dropdown-content">
                     <li><a href="#"><span class="am-icon-bell-o"></span> 资料</a></li>
                     <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
-                    <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+                    <li><a href="{{asset('admin/logout')}}"><span class="am-icon-power-off"></span> 退出</a></li>
                 </ul>
             </li>
             <li><a href="###" class="tpl-header-list-link"><span
@@ -161,11 +158,7 @@
         </ul>
     </div>
 </header>
-
-
 <div class="tpl-page-container tpl-page-header-fixed">
-
-
     <div class="tpl-left-nav tpl-left-nav-hover">
         <div class="tpl-left-nav-title">
             operation 列表
@@ -173,7 +166,7 @@
         <div class="tpl-left-nav-list">
             <ul class="tpl-left-nav-menu">
                 <li class="tpl-left-nav-item">
-                    <a href="index.html" class="nav-link active">
+                    <a href="{{asset('admin/index')}}" class="nav-link  active">
                         <i class="am-icon-home"></i>
                         <span>首页</span>
                     </a>
@@ -186,9 +179,12 @@
                     </a>
                     <ul class="tpl-left-nav-sub-menu">
                         <li>
-                            <a href="#" class="nav-link tpl-left-nav-link-list">
+                            <a href="{{url('admin/user/list')}}" class="nav-link tpl-left-nav-link-list">
                                 <i class="am-icon-"></i>
                                 账号管理
+                                <i class="tpl-left-nav-content tpl-badge-primary">
+
+                                </i>
                             </a>
                         </li>
                         <li>
@@ -205,79 +201,24 @@
                         </li>
                     </ul>
                 </li>
-
-                {{-- <li class="tpl-left-nav-item">
-                     <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                         <i class="am-icon-table"></i>
-                         <span>表格</span>
-                         <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
-                     </a>
-                     <ul class="tpl-left-nav-sub-menu">
-                         <li>
-                             <a href="table-font-list.html">
-                                 <i class="am-icon-angle-right"></i>
-                                 <span>文字表格</span>
-                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                             </a>
-                             <a href="table-images-list.html">
-                                 <i class="am-icon-angle-right"></i>
-                                 <span>图片表格</span>
-                                 <i class="tpl-left-nav-content tpl-badge-success">
-                                     18
-                                 </i>
-                                 <a href="form-news.html">
-                                     <i class="am-icon-angle-right"></i>
-                                     <span>消息列表</span>
-                                     <i class="tpl-left-nav-content tpl-badge-primary">
-                                         5
-                                     </i>
-                                     <a href="form-news-list.html">
-                                         <i class="am-icon-angle-right"></i>
-                                         <span>文字列表</span>
-                                     </a>
-                                 </a>
-                             </a>
-                         </li>
-                     </ul>
-                 </li>
-
-                 <li class="tpl-left-nav-item">
-                     <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-                         <i class="am-icon-wpforms"></i>
-                         <span>表单</span>
-                         <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
-                     </a>
-                     <ul class="tpl-left-nav-sub-menu" style="display: block;">
-                         <li>
-                             <a href="form-amazeui.html">
-                                 <i class="am-icon-angle-right"></i>
-                                 <span>Amaze UI 表单</span>
-                                 <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                             </a>
-
-                             <a href="form-line.html">
-                                 <i class="am-icon-angle-right"></i>
-                                 <span>线条表单</span>
-                             </a>
-                         </li>
-                     </ul>
-                 </li>--}}
             </ul>
         </div>
     </div>
+    {{--提示消息--}}
+    @if(session('error'))
+        <script>
+            var session = "{{session('error')}}";
+            layer.msg(session);
+        </script>
+    @endif
+    @if(session('message'))
+        <script>
+            var session = "{{session('message')}}";
+            layer.msg(session);
+        </script>
+    @endif
+    @yield('content')
 
-
-    <div class="tpl-content-wrapper">
-        <div class="tpl-content-page-title">
-            Amaze UI 首页组件
-        </div>
-        <ol class="am-breadcrumb">
-            <li><a href="#" class="am-icon-home">首页</a></li>
-            <li><a href="#">分类</a></li>
-            <li class="am-active">内容</li>
-        </ol>
-        
-    </div>
 </div>
 
 
@@ -286,5 +227,4 @@
 <script src="{{asset('assets/js/iscroll.js')}}"></script>
 <script src="{{asset('assets/js/app.js')}}"></script>
 </body>
-
 </html>

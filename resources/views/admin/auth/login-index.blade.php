@@ -35,6 +35,7 @@
 		<div class="am-u-sm-10 login-am-center">
 			<form class="am-form" method="post" action="{{url('admin/login/post')}}">
 				<fieldset>
+                    {{csrf_field()}}
 					<div class="am-form-group">
 						<input type="text" name="username" class="" id="doc-ipt-email-1" placeholder="输入账号">
 					</div>
